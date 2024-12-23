@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    $id_dokter = $_SESSION['id'];
     $username = $_SESSION['username'];
+    $id_poli = $_SESSION['id_poli'];
 
     if ($username == "") {
         header("location:login.php");
@@ -14,12 +16,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 <head>
-     <!--  Poliklinik Udinus dibuat oleh Aditya Herdiansyah Putra - A11.2021.13948 -->
+    <!--  Poliklinik Udinus dibuat oleh Aditya Herdiansyah Putra - A11.2021.13948 -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Poliklinik</title>
-    <link rel="icon" type="image/png" href="assets\images\logo1.svg">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -29,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
     <!-- Fav Icon -->
-    <link rel="icon" type="image/png" href="asset/images/logo_dinus.png">    
+    <link rel="icon" type="image/png" href="assets\images\logo1.svg">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -44,14 +45,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <?php include ('pages/dashboard/index.php') ?>
+            <?php include ('pages/riwayatPasien/index.php') ?>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here --> 
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Halo</p>
+            </div>
         </aside>
         <!-- /.control-sidebar -->
 

@@ -2,9 +2,10 @@
 <?php
     session_start();
     $username = $_SESSION['username'];
+    $idPasien = $_SESSION['id'];
 
     if ($username == "") {
-        header("location:login.php");
+        header("location:loginUser.php");
     }
 ?>
 <!--
@@ -43,6 +44,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php include ('pages/dashboard/index.php') ?>
             <!-- /.content -->
         </div>
+        <div class="">
+            <!-- Content Header (Page header) -->
+            <?php include ('pages\daftarPoli\index.php') ?>
+            <!-- /.content -->
+        </div>
         <!-- /.content-wrapper -->
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -62,6 +68,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/dist/js/adminlte.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#poli').on('change', function() {
+            var poliId = $(this).val();
+
+            // Mengambil data jadwal berdasarkan poli yang dipilih
+            $.ajax({
+                type: 'POST',
+                url: 'getJadwal.php',
+                data: {
+                    poliId: poliId
+                },
+                success: function(data) {
+                    $('#jadwal').html(data);
+                }
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>

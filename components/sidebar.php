@@ -1,28 +1,23 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #0A3981;">
-    
+<aside class="main-sidebar elevation-4" style="background-color:rgb(1, 51, 138); color: #ffffff;">
+    <!-- Brand Logo -->
+    <!-- <a href="index3.html" class="brand-link">
+        <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a> -->
+
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
-            <?php
-                if ($_SESSION['akses'] == "admin") {
-            ?>
-                <div class="image">
-                    <img src="assets\images\profil_admin.svg" alt="User Image" style="width: 55px;">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $username ?></a>
-                </div>
-            <?php } else if($_SESSION['akses']=="dokter"){?>
-                <div class="image">
-                    <img src="assets\images\profil_doctor.svg" alt="User Image" style="width: 40px;">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $username ?></a>
-                </div>
-            <?php } ?>
+        <div class="user-panel mt-3 pb-3 d-flex">
+            <div class="image">
+                <img src="assets\images\profil_doctor.svg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block" style ="color: #ffffff;"><?php echo $username ?></a>
+            </div>
         </div>
-
+        <hr style="background-color: #ffffff;">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -42,32 +37,32 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="dashboard_admin.php" class="nav-link">
-                                <i class="fas fa-solid fas fa-th nav-icon"></i>
-                                <p>Dashboard <span class="right badge badge-danger">Admin</span></p>
+                                <i class="fas fa-solid fas fa-th nav-icon" style ="color: #ffffff;"></i>
+                                <p style ="color: #ffffff;">Dashboard <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="dokter.php" class="nav-link">
-                                <i class="fas fa-solid fa-user-nurse nav-icon"></i>
-                                <p>Dokter <span class="right badge badge-danger">Admin</span></p>
+                                <i class="fas fa-solid fa-user-nurse nav-icon" style ="color: #ffffff;"></i>
+                                <p style ="color: #ffffff;">Dokter <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="poli.php" class="nav-link">
-                                <i class="fas fa-solid fa-hospital nav-icon"></i>
-                                <p>Poli <span class="right badge badge-danger">Admin</span></p>
+                                <i class="fas fa-solid fa-hospital nav-icon" style ="color: #ffffff;"></i>
+                                <p style ="color: #ffffff;">Poli <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="obat.php" class="nav-link">
-                                <i class="fas fa-solid fa-tablets nav-icon"></i>
-                                <p>Obat <span class="right badge badge-danger">Admin</span></p>
+                                <i class="fas fa-solid fa-tablets nav-icon" style ="color: #ffffff;"></i>
+                                <p style ="color: #ffffff;">Obat <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pasien.php" class="nav-link">
-                                <i class="fas fa-solid fa-user nav-icon"></i>
-                                <p>Pasien <span class="right badge badge-danger">Admin</span></p>
+                                <i class="fas fa-solid fa-user nav-icon" style ="color: #ffffff;"></i>
+                                <p style ="color: #ffffff;">Pasien <span class="right badge badge-danger">Admin</span></p>
                             </a>
                         </li>
                     </ul>
@@ -75,17 +70,35 @@
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
                             <a href="dashboard_dokter.php" class="nav-link">
-                                <i class="fas fa-solid fas fa-th nav-icon"></i>
-                                <p>Dashboard <span class="right badge badge-success">Dokter</span></p>
+                                <i class="fas fa-solid fas fa-th nav-icon" style ="color: #ffffff;"></i>
+                                <p  style ="color: #ffffff;">Dashboard <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="jadwalPeriksa.php" class="nav-link">
+                                <i class="fas fa-solid fa-hospital-user nav-icon" style ="color: #ffffff;"></i>
+                                <p  style ="color: #ffffff;">Jadwal Periksa <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="periksaPasien.php" class="nav-link">
+                                <i class="fas fa-solid fa-stethoscope nav-icon" style ="color: #ffffff;"></i>
+                                <p  style ="color: #ffffff;">Daftar Pasien <span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="riwayatPasien.php" class="nav-link">
+                                <i class="fas fa-solid fa-book-medical nav-icon" style ="color: #ffffff;"></i>
+                                <p  style ="color: #ffffff;">Riwayat Pasien <span class="right badge badge-success">Dokter</span></p>
                             </a>
                         </li>
                     </ul>
-                    <?php } ?>
+                    <?php }  ?>
                 </li>
                 <li class="nav-item">
                     <a href="pages/logout/logout.php" class="nav-link">
-                        <i class="nav-icon fas fa-sign-out-alt"></i>
-                        <p>
+                        <i class="nav-icon fas fa-sign-out-alt" style ="color: #ffffff;"></i>
+                        <p style ="color: #ffffff;">
                             Logout
                         </p>
                     </a>

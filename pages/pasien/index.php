@@ -162,7 +162,7 @@
                                     </div>
                                     <!-- Modal Hapus Data Obat -->
                                     <div class="modal fade" id="hapusModal<?php echo $data['id'] ?>" tabindex="-1"
-                                        role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                                        role="dialog" a`ria-labelledby="addModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">

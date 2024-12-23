@@ -18,6 +18,9 @@
         }
 
         .dashboard-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
             padding: 30px;
             background-image: url('assets/images/blur-hospital.jpg');
             background-size: cover;
@@ -26,10 +29,6 @@
         }
 
         .card-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
             max-width: 600px;
         }

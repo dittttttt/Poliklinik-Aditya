@@ -2,9 +2,10 @@
 <?php
     session_start();
     $username = $_SESSION['username'];
+    $idPasien = $_SESSION['id'];
 
     if ($username == "") {
-        header("location:login.php");
+        header("location:loginUser.php");
     }
 ?>
 <!--
@@ -14,12 +15,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 <head>
-     <!--  Poliklinik Udinus dibuat oleh Aditya Herdiansyah Putra - A11.2021.13948 -->
+   <!--  Poliklinik Udinus dibuat oleh Aditya Herdiansyah Putra - A11.2021.13948 -->
 
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Poliklinik</title>
-    <link rel="icon" type="image/png" href="assets\images\logo1.svg">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -29,31 +29,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
     <!-- Fav Icon -->
-    <link rel="icon" type="image/png" href="asset/images/logo_dinus.png">    
+    <link rel="icon" type="image/png" href="assets\images\logo1.svg">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-        <!-- Navbar -->
-        <?php include ('components/navbar.php') ?>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <?php include ('components/sidebar.php') ?>
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div>
             <!-- Content Header (Page header) -->
-            <?php include ('pages/dashboard/index.php') ?>
+            <?php include ('pages/detailDaftarPoli/index.php') ?>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here --> 
-        </aside>
-        <!-- /.control-sidebar -->
 
         <!-- Main Footer -->
     </div>
@@ -67,6 +55,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/dist/js/adminlte.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#poli').on('change', function() {
+            var poliId = $(this).val();
+
+            // Mengambil data jadwal berdasarkan poli yang dipilih
+            $.ajax({
+                type: 'POST',
+                url: 'getJadwal.php', // Ganti dengan path file get_jadwal.php sesuai dengan struktur proyek Anda
+                data: {
+                    poliId: poliId
+                },
+                success: function(data) {
+                    $('#jadwal').html(data);
+                }
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
