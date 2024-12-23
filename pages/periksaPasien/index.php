@@ -137,9 +137,7 @@
                                                             </div>
                                                             <div class="form-group mb-3">
                                                                 <label>Obat</label>
-                                                                <select class="select2" multiple="multiple"
-                                                                    data-placeholder="Pilih Obat" style="width: 100%;"
-                                                                    name="obat[]">
+                                                                <select class="form-control select2" multiple="multiple" data-placeholder="Pilih Obat" style="width: 100%;" name="obat[]">
                                                                     <?php 
                                                                         require 'config/koneksi.php';
                                                                         $getObat = "SELECT * FROM obat";
@@ -151,7 +149,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <button type="submit" class="btn btn-info">Periksa</button>
+                                                            <button type="submit" class="btn btn-sm btn-info">Periksa</button>
                                                         </form>
                                                     </div>
                                                 </div>
