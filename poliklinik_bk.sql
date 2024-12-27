@@ -115,7 +115,7 @@ INSERT INTO `dokter` (`id`, `nama`, `password`, `alamat`, `no_hp`, `id_poli`, `i
 (11, 'dr. Aditya Herdiansyah, Sp.A.', '5e571ed80f6c1f87aad9274690fcff23', 'Jalan Banjardowo', '0896266266626622', 10, '0'),
 (12, 'dr. Akbar Maulana, Sp.THT.', '337068c6cfae84255431184f19f05b61', 'jalan Sari Asih ', '08299929922', 13, '0'),
 (13, 'dr. Aditya Putra Siregar, Sp.PD', 'abb85635b7d4dfdd6462d5e1616c9878', 'Jalan Pattimura', '089781882000', 14, '1'),
-(14, 'dr. Aditya Putra, Sp. M', '554fe6ccd84e7d87277a083a08ff2b5b', 'Jalan Melati Baru', '089123455678', 12, '0'),
+(14, 'dr. Aditya Putra, Sp.M.', 'e6c6e6cca612b9d8150de51593f9d956', 'Jalan Melati Baru', '089123455678', 12, '0'),
 (15, 'dr. Aditya herdi Putra, Sp. M', 'da064252c40f799b614c969456d9d1d7', 'Jalan Gunung sahari', '0812345679559', 14, '1'),
 (16, 'dr. Budi Santoso, S. THT', '297d273e0e124c6ddb837c951ec4863f', 'Jalan Mawar NO 12', '089771627626', 13, '0');
 
