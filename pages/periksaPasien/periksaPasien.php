@@ -19,7 +19,7 @@
         
             $idPeriksa = $getIdPeriksa['id'];
         
-            // Inisialisasi total biaya dengan nilai awal 150000
+            // Setting total biaya dengan nilai awal 150000
             $totalBiaya = 150000;
         
             foreach ($arrayObat as $obat) {

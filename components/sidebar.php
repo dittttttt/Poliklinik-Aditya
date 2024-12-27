@@ -92,6 +92,12 @@
                                 <p  style ="color: #ffffff;">Riwayat Pasien <span class="right badge badge-success">Dokter</span></p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="profilDokter.php" class="nav-link">
+                                <i class="fas fa-solid fa-address-card nav-icon" style ="color: #ffffff;"></i>
+                                <p  style ="color: #ffffff;">Profil Dokter<span class="right badge badge-success">Dokter</span></p>
+                            </a>
+                        </li>
                     </ul>
                     <?php }  ?>
                 </li>

@@ -120,7 +120,7 @@
                                         <button type='button' class='btn btn-sm btn-danger edit-btn' data-toggle="modal"
                                             data-target="#hapusModal<?php echo $data['id'] ?>">Hapus</button>
                                     </td>
-                                    <!-- Modal Edit Data poli -->
+                                    <!-- Modal Edit Data Dokter -->
                                     <div class="modal fade" id="editModal<?php echo $data['id'] ?>" tabindex="-1"
                                         role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -133,7 +133,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <!-- Form edit data poli disini -->
+                                                    <!-- Form edit data Dokter disini -->
                                                     <form action="pages/dokter/updateDokter.php" method="post">
                                                         <input type="hidden" class="form-control" id="id" name="id"
                                                             value="<?php echo $data['id'] ?>" required>
@@ -175,7 +175,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Modal Hapus Data poli -->
+                                    <!-- Modal Hapus Data Dokter -->
                                     <div class="modal fade" id="hapusModal<?php echo $data['id'] ?>" tabindex="-1"
                                         role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">

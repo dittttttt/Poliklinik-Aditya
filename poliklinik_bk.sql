@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2024 at 03:34 AM
+-- Generation Time: Dec 27, 2024 at 03:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,17 @@ CREATE TABLE `daftar_poli` (
 INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antrian`, `status_periksa`, `is_deleted`) VALUES
 (3, 10, 6, 'Kepala Cenat Cenut', 1, '1', '0'),
 (4, 10, 9, 'bercak pada kulit', 1, '1', '0'),
-(5, 10, 8, 'Kaki saya sakit', 1, '1', '0');
+(5, 10, 8, 'Kaki saya sakit', 1, '1', '0'),
+(6, 12, 13, 'Kaki saya kudasan', 1, '1', '1'),
+(7, 12, 10, 'Jantung saya berdetak dok', 1, '0', '0'),
+(8, 12, 13, 'Mata Saya merah', 2, '1', '0'),
+(9, 12, 14, 'Tenggorokan saya serah', 1, '0', '0'),
+(10, 12, 13, 'Mata saya cenat cenut', 3, '1', '1'),
+(11, 12, 13, 'Mata saya iritasi', 4, '0', '0'),
+(12, 20, 13, 'Mata saya merah', 5, '0', '0'),
+(13, 20, 13, 'Anak Demam Tinggi Sekali sudah 3 hari', 6, '0', '0'),
+(14, 15, 18, 'Mata saya terasa gatal', 1, '1', '0'),
+(15, 15, 18, 'Mata saya merah, mungkin iritasi karena debu', 2, '1', '0');
 
 -- --------------------------------------------------------
 
@@ -68,7 +78,18 @@ INSERT INTO `detail_periksa` (`id`, `id_periksa`, `id_obat`, `is_deleted`) VALUE
 (7, 4, 12, '0'),
 (8, 5, 12, '0'),
 (9, 6, 11, '0'),
-(10, 6, 13, '0');
+(10, 6, 13, '0'),
+(11, 7, 10, '0'),
+(12, 7, 11, '0'),
+(13, 8, 11, '0'),
+(14, 8, 15, '0'),
+(15, 9, 10, '0'),
+(16, 9, 11, '0'),
+(17, 10, 10, '0'),
+(18, 10, 11, '0'),
+(19, 11, 10, '0'),
+(20, 11, 11, '0'),
+(21, 11, 12, '0');
 
 -- --------------------------------------------------------
 
@@ -93,9 +114,9 @@ CREATE TABLE `dokter` (
 INSERT INTO `dokter` (`id`, `nama`, `password`, `alamat`, `no_hp`, `id_poli`, `is_deleted`) VALUES
 (11, 'dr. Aditya Herdiansyah, Sp.A.', '5e571ed80f6c1f87aad9274690fcff23', 'Jalan Banjardowo', '0896266266626622', 10, '0'),
 (12, 'dr. Akbar Maulana, Sp.THT.', '337068c6cfae84255431184f19f05b61', 'jalan Sari Asih ', '08299929922', 13, '0'),
-(13, 'dr. Aditya Putra Siregar, Sp.PD', '953dc835f6aa4723ebf049385a407535', 'Jalan Pattimura', '089781882000', 14, '1'),
-(14, 'dr. Aditya Putra, Sp.M.', 'e6c6e6cca612b9d8150de51593f9d956', 'Jalan Bunga Asri', '08967272772', 12, '0'),
-(15, 'dr. Aditya Herdiansyah Putra, Sp. M', 'b41521a5a2dcfbe1353fc83f098b1eb7', 'Jalan Mutiara Hitam', '089182828288', 12, '1'),
+(13, 'dr. Aditya Putra Siregar, Sp.PD', 'abb85635b7d4dfdd6462d5e1616c9878', 'Jalan Pattimura', '089781882000', 14, '1'),
+(14, 'dr. Aditya Putra, Sp. M', '554fe6ccd84e7d87277a083a08ff2b5b', 'Jalan Melati Baru', '089123455678', 12, '0'),
+(15, 'dr. Aditya herdi Putra, Sp. M', 'da064252c40f799b614c969456d9d1d7', 'Jalan Gunung sahari', '0812345679559', 14, '1'),
 (16, 'dr. Budi Santoso, S. THT', '297d273e0e124c6ddb837c951ec4863f', 'Jalan Mawar NO 12', '089771627626', 13, '0');
 
 -- --------------------------------------------------------
@@ -119,12 +140,22 @@ CREATE TABLE `jadwal_periksa` (
 --
 
 INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_selesai`, `aktif`, `is_deleted`) VALUES
-(6, 11, 'Senin', '08:00:00', '10:00:00', 'N', '0'),
-(7, 11, 'Jumat', '15:00:00', '18:00:00', 'Y', '0'),
+(6, 11, 'Senin', '08:00:00', '10:00:00', 'N', '1'),
+(7, 11, 'Jumat', '15:00:00', '18:00:00', 'N', '1'),
 (8, 12, 'Senin', '10:00:00', '12:00:00', 'N', '0'),
 (9, 13, 'Senin', '12:00:00', '15:00:00', 'N', '0'),
-(10, 13, 'Kamis', '18:00:00', '21:00:00', 'Y', '0'),
-(11, 12, 'Jumat', '16:00:00', '19:00:00', 'N', '0');
+(10, 13, 'Kamis', '18:00:00', '02:00:00', 'Y', '0'),
+(11, 12, 'Jumat', '16:00:00', '19:00:00', 'Y', '0'),
+(12, 14, 'Senin', '09:00:00', '11:00:00', 'N', '0'),
+(13, 14, 'Selasa', '13:00:00', '16:00:00', 'Y', '0'),
+(14, 16, 'Senin', '14:00:00', '16:00:00', 'Y', '0'),
+(15, 14, 'Rabu', '13:00:00', '18:00:00', 'N', '0'),
+(16, 11, 'Rabu', '15:00:00', '17:00:00', 'N', '1'),
+(17, 16, 'Sabtu', '09:00:00', '12:00:00', 'N', '0'),
+(18, 15, 'Kamis', '12:00:00', '15:00:00', 'Y', '0'),
+(19, 14, 'Jumat', '12:00:00', '14:00:00', 'N', '0'),
+(20, 14, 'Selasa', '14:00:00', '16:00:00', 'N', '0'),
+(21, 11, 'Kamis', '10:00:00', '14:00:00', 'Y', '0');
 
 -- --------------------------------------------------------
 
@@ -182,7 +213,9 @@ INSERT INTO `pasien` (`id`, `nama`, `password`, `alamat`, `no_ktp`, `no_hp`, `no
 (16, 'Jhony Suhendar', '305a0acc6cb2226c9bba3da3f28e429f', 'Jalan Mekarsari No 10', '3374010010011111', '0897172772712', '202412-006', '0'),
 (17, 'Aditya Herdiansyah Putra', '8b019af0a1de935cc5e76d804967d51a', 'Jalan Anggraini', '337412345676542', '08966676771', '202412-007', '0'),
 (18, 'Dwi Prakoso', 'c096705ef10e3b1986fcbabdd01cd7e1', 'Jalan Merpati Putih', '337498918282822', '087216515222', '202412-008', '0'),
-(19, 'Jhony', '305a0acc6cb2226c9bba3da3f28e429f', 'Jalan Merdeka', '33747612676622', '089443152551', '202412-009', '0');
+(19, 'Jhony', '305a0acc6cb2226c9bba3da3f28e429f', 'Jalan Merdeka', '33747612676622', '089443152551', '202412-009', '0'),
+(20, 'Aditya Putra', 'b9814bdf1ad6d85b997b317987862659', 'Jalan Mawar', '3385476212554655', '0896165742952', '202412-010', '0'),
+(21, 'Aditya Herdiansyah Putra', 'b9814bdf1ad6d85b997b317987862659', 'Jalan Anggraini Elok', '3337845156551122', '08994465653', '202412-011', '0');
 
 -- --------------------------------------------------------
 
@@ -205,8 +238,13 @@ CREATE TABLE `periksa` (
 
 INSERT INTO `periksa` (`id`, `id_daftar_poli`, `tgl_periksa`, `catatan`, `biaya_periksa`, `is_deleted`) VALUES
 (4, 3, '2024-12-10 16:12:00', 'cek cek', 176000, '0'),
-(5, 4, '2024-12-10 16:47:00', 'Semoga cepat sembuh', 172000, '0'),
-(6, 5, '2024-01-10 19:05:00', 'semoga lekas sembuh', 178000, '0');
+(5, 4, '2024-12-19 18:48:00', 'Semoga Cepat pulih\r\n', 172000, '0'),
+(6, 5, '2024-01-10 19:05:00', 'semoga lekas sembuh', 178000, '0'),
+(7, 6, '2024-12-23 18:34:00', 'Minum obat 3x1', 171000, '0'),
+(8, 8, '2024-12-24 00:00:00', 'Minum setelah makan', 170000, '0'),
+(9, 10, '2024-12-24 00:10:00', 'Mata saya minus 2', 171000, '0'),
+(10, 14, '2024-12-27 04:42:00', 'Teteskan obat cair sebelum tidur dan setelah mandi\r\n', 171000, '0'),
+(11, 15, '2024-12-27 04:55:00', 'Berikan obat tetes setiap malam dan minum obat setelah makan', 188000, '0');
 
 -- --------------------------------------------------------
 
@@ -301,13 +339,13 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `daftar_poli`
 --
 ALTER TABLE `daftar_poli`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `detail_periksa`
 --
 ALTER TABLE `detail_periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `dokter`
@@ -319,7 +357,7 @@ ALTER TABLE `dokter`
 -- AUTO_INCREMENT for table `jadwal_periksa`
 --
 ALTER TABLE `jadwal_periksa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `obat`
@@ -331,13 +369,13 @@ ALTER TABLE `obat`
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `poli`
